@@ -1,0 +1,57 @@
+body{
+  
+  height:100vh;
+}
+
+header{
+  
+  grid-area:he;
+  background-color: grey;
+}
+aside{
+  
+  grid-area:as;
+  background-color:lightgrey;
+}
+main{
+  
+  grid-area:ma;
+  background-color: darkgrey;
+}
+nav{
+  
+  grid-area:na;
+  background-color: #FFFFFF; /*255:255:255*   R:G:B */ 
+}
+footer{
+  
+  grid-area:fo;
+  background-color: grey;
+  
+}
+
+#wrapper{
+  height:100%;
+  display:grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 15% 5%  70%  10%;
+  grid-template-areas: 
+      "he he he he"
+      "na na na na"
+      "as . ma ma"
+      "fo fo fo fo";
+}
+@media screen and (max-width:700px){
+  
+#wrapper{  
+  grid-template-rows: 100% 100%  100%  100% 100%;
+  grid-template-areas: 
+      "he he he he"
+      "na na na na"
+      "as as as as"
+      "ma ma ma ma"
+      "fo fo fo fo";
+ }
+}  
+  
+
