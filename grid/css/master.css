@@ -16,8 +16,10 @@ aside{
 main{
   
   grid-area:ma;
-  background-color: darkgrey;
-}
+  background-image: url('images/bild1.jpg');
+  
+  
+  }
 nav{
   
   grid-area:na;
