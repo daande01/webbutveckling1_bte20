@@ -9,7 +9,7 @@ var x=100;
 var y= 100;
 var xSpeed=1;
 var ySpeed=2;
-var g = 2;
+var g = 4;
 
 function update(){
   
@@ -17,7 +17,9 @@ function update(){
   
   x=x+xSpeed;
   y=y+ySpeed;
-  if (y>=h){
+  if ((y+50)>=h){
+    
+    y=h-50;
     ySpeed=ySpeed*-1;
   }
   
@@ -36,4 +38,4 @@ function paint(){
   update();
 }
 
-setInterval(paint,40);
+setInterval(paint,35);
