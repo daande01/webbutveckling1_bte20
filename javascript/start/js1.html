@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>getElementById example</title>
+ <style>
+  #b1{
+    display:none;
+  }
+  #b2{
+    display:none;
+  }
+  </style>
+</head>
+<body>
+  <p id="para1">Some text here</p>
+  <button id="b1">blue</button>
+  <button id="b2">red</button>
+
+<script>
+  var bb1=document.getElementById("b1");
+  bb1.style.display="inline";
+  var bb2=document.getElementById("b2");
+  bb2.style.display="inline";
+
+  function changeColor(newColor) {
+    var elem = document.getElementById("para1");
+    elem.style.color = newColor;
+
+  }
+
+  document.getElementById("b1").addEventListener("click",function(){
+    
+    changeColor("blue");
+    console.log("blue");
+  });
+  
+  document.getElementById("b2").addEventListener("click",function(){
+    
+    changeColor("red");
+    console.log("red");
+  });
+
+  </script>
+</body>
+</html>
