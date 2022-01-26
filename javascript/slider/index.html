@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      img{
+        margin:0px;
+        padding:0px;
+        border:0px;
+      }
+      
+      #window{
+        
+        width:640px;
+        height:426px;
+        overflow:hidden;
+        
+      }
+      #pictures{
+        display:flex;
+        width:1920px;
+        position:relative;
+        
+      }
+      
+    </style>
+    
+  </head>
+  <body>
+  <div id="window">  
+    <div id="pictures">
+    <img src="bilder/bild1.jpg" width="640px" height="426px" alt="skog">
+    <img src="bilder/bild2.jpg" alt="skog">
+    <img src="bilder/bild3.jpg" alt="skog">
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    
+    $("#window").click(function(){
+      console.log("funkar");
+    //  $("#pictures").css("right","+=200px");
+    
+    $("#pictures").animate({
+    
+    right: "+=640",
+    
+  }, 5000, function() {
+    console.log("klart");
+  });
+    
+    
+    });
+    
+  </script>
+  
+  
+  
+  </body>
+</html>
