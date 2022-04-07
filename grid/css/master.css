@@ -1,6 +1,7 @@
 body{
   
   height:100vh;
+  
 }
 
 header{
@@ -46,13 +47,13 @@ footer{
 @media screen and (max-width:700px){
   
 #wrapper{  
-  grid-template-rows: 100% 100%  100%  100% 100%;
+  grid-template-rows: 50% 50% ;
   grid-template-areas: 
-      "he he he he"
-      "na na na na"
-      "as as as as"
-      "ma ma ma ma"
-      "fo fo fo fo";
+      "he he  "
+      "na na "
+      "as as"
+      "ma ma"
+      "fo fo";
  }
 }  
   

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    
+    <form  action="#" >
+      
+      <label for="phone">phone</label>
+      <input id="phone" type="text" name="tele" value="">
+      <div id="text">
+        hej
+      </div>
+      
+      
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>  
+    $( document ).ready(function() {
+      
+        $("#phone").keyup(function(){   
+        
+        var re= /^[0]{2}[0-9]{6,15}$/
+        
+          var ok  =re.exec(  $("#phone").val()  );
+        
+          if (!ok) {
+            
+            $("#text").text("du har matat in fel")
+            
+          }else{
+            
+            $("#text").text("ok")
+            
+          }
+        
+        });
+        
+      
+      
+      });
+      
+      
+    </script>
+    
+  </body>
+</html>

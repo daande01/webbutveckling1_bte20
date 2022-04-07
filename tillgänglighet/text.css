@@ -1,0 +1,19 @@
+#outer{
+  width:900px;
+  height:50%;
+  border: solid 2px;
+overflow:hidden;  
+background-color: #FFFFFF;
+color: #000000;
+font-size: 20px;
+line-height: 1.5;
+margin-left: auto;
+margin-right: auto;
+letter-spacing: 1px;
+}
+body{
+  
+  width:100vw;
+  
+  
+}
