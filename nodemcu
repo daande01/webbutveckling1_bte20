@@ -1,0 +1,51 @@
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h>
+#include <ESP8266WebServer.h>
+const char* ssid = "tekniklabbet";
+const char* password = "tekniklabbet";
+String page = "";
+int ledPin = 2; 
+IPAddress ip(192,168,30,98);
+IPAddress gw(192,168,30,1);
+IPAddress dn(192,168,30,1);
+IPAddress mask(255,255,255,0);
+ESP8266WebServer server(80);//------------------------------------------
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+ 
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  WiFi.config(ip,dn,gw,mask);
+  delay(500);
+  Serial.println("");
+  Serial.println("WiFi connected");
+  page = "<h1>STYRLAMPAN</h1><p><a href=\"LEDon\"><button>ON</button></a>&nbsp;<a href=\"LEDoff\"><button>OFF</button></a></p>";//---------------
+
+  server.on("/", [](){
+      server.send(200, "text/html", page);
+      Serial.println("start");
+    });
+  
+    server.on("/LEDon", [](){
+      server.send(200, "text/html", page);
+      digitalWrite(ledPin, LOW);
+      Serial.println("on");
+      
+    });
+  
+    server.on("/LEDoff", [](){
+      server.send(200, "text/html", page);
+      digitalWrite(ledPin, HIGH);   
+      Serial.println("off");
+    });
+  server.begin();//----------------------------------
+}
+
+void loop() {
+  server.handleClient(); //--------------------------------
+
+}
